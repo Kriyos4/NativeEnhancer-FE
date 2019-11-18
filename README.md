@@ -1,15 +1,15 @@
 <!-- PROJECT LOGO -->
 <p align="center">
-  <a href="https://github.com/dddfault/NativeEnhancer-FE">
+  <a href="https://github.com/dddfault/NativeEnhancer-FE-DX10">
     <img src="https://live.staticflickr.com/65535/48841386416_62dc944781_o.png" alt="Logo" width="512" height="97">
   </a>
 
   <h3 align="center">Simple and Basic Film Emulation shader for ReShade (DirectX 10+ API)</h3>
 
   <p align="center">
-    <a href="https://github.com/dddfault/NativeEnhancer-FE/issues">Report Bug</a>
+    <a href="https://github.com/dddfault/NativeEnhancer-FE-DX10/issues">Report Bug</a>
     ·
-    <a href="https://github.com/dddfault/NativeEnhancer-FE/issues">Request Feature</a>
+    <a href="https://github.com/dddfault/NativeEnhancer-FE-DX10/issues">Request Feature</a>
   </p>
 </p>
 
@@ -55,7 +55,7 @@ ReShade 4.x.x, (Latest version is recommended)
 
 ### Installation
 
-1. [Download](https://github.com/dddfault/NativeEnhancer-FE/archive/master.zip) this repository
+1. [Download](https://github.com/dddfault/NativeEnhancer-FE-DX10/archive/master.zip) this repository
 2. Extract the downloaded archive to your ReShade shaders folder
 3. Start your game, open the ReShade in-game menu and you good to go
 
