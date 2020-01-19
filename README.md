@@ -55,7 +55,7 @@ ReShade 4.x.x, (Latest version is recommended)
 
 ### Installation
 
-1. [Download](https://github.com/dddfault/NativeEnhancer-FE-DX10/archive/master.zip) this repository
+1. [Download](https://github.com/dddfault/NativeEnhancer-FE-DX10/archive/master.zip) this repository (Size : 129 MB (135.946.225 bytes))
 2. Extract the downloaded archive to your ReShade shaders folder
 3. Start your game, open the ReShade in-game menu and you good to go
 
