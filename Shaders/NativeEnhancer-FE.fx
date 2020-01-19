@@ -5,7 +5,7 @@
 // /_/ |_/\__,_/\__/_/ |___/\___/_____/_/ /_/_/ /_/\__,_/_/ /_/\___/\___/_/
 ///////////////////////////////////////////////////////////////////////////
 // Film Emulation LUT
-// Version 2.4 Closed Public Release
+// Version 2.5 Closed Public Release
 ///////////////////////////////////////////////////////////////////////////
 // Multi-LUT function, using a texture atlas with multiple LUTs
 // by Otis / Infuse Project.
@@ -27,9 +27,9 @@
 ///////////////////////////////////////////////////////////////////////////
 #include "ReShade.fxh"
 #include "Macros.fxh"
-#include "..\NativeEnhancer\Common\Miscellaneous.fxh"
-#include "..\NativeEnhancer\Common\Resources.fxh"
-#include "..\NativeEnhancer\Common\UserInterface.fxh"
+#include "NativeEnhancer\Common\Miscellaneous.fxh"
+#include "NativeEnhancer\Common\Resources.fxh"
+#include "NativeEnhancer\Common\UserInterface.fxh"
 
 // PIXEL SHADER ///////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
@@ -161,6 +161,7 @@ void FilmOverlay2(float4 vpos : SV_Position, float2 texcoord : TEXCOORD, out flo
 {
 	float2 dcoord;
 	float4  dirt, frame;
+
 	color = tex2D(ReShade::BackBuffer, texcoord.xy);
 
 	if (USE_DIRT == true){
