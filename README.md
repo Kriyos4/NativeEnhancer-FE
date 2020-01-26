@@ -10,6 +10,8 @@
     <a href="https://github.com/dddfault/NativeEnhancer-FE-DX10/issues">Report Bug</a>
     ·
     <a href="https://github.com/dddfault/NativeEnhancer-FE-DX10/issues">Request Feature</a>
+    ·
+    <a href="https://github.com/dddfault/NativeEnhancer-FE-DX10/archive/master.zip">Download</a>
   </p>
 </p>
 
