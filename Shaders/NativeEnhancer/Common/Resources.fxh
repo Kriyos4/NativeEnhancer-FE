@@ -5,7 +5,7 @@
 // /_/ |_/\__,_/\__/_/ |___/\___/_____/_/ /_/_/ /_/\__,_/_/ /_/\___/\___/_/
 ///////////////////////////////////////////////////////////////////////////
 // Film Emulation LUT
-// Version 2.5 Closed Public Release
+// Version 2.7 Closed Public Release
 // by d3fault
 ///////////////////////////////////////////////////////////////////////////
 // Textures and other resources
@@ -62,6 +62,20 @@ SAMPLER(NE_FRAME_G, NE_FRAME_7)
 SAMPLER(NE_FRAME_H, NE_FRAME_8)
 SAMPLER(NE_FRAME_I, NE_FRAME_9)
 SAMPLER(NE_FRAME_J, NE_FRAME_10)
+
+// POLAROID ///////////////////////////////////////////////////////////////
+TEXTURE(NE_POLAROID_1, "NativeEnhancer/Frame/Polaroid1.png")
+TEXTURE(NE_POLAROID_2, "NativeEnhancer/Frame/Polaroid2.png")
+TEXTURE(NE_POLAROID_3, "NativeEnhancer/Frame/Polaroid3.png")
+TEXTURE(NE_POLAROID_4, "NativeEnhancer/Frame/Polaroid4.png")
+TEXTURE(NE_POLAROID_5, "NativeEnhancer/Frame/Polaroid5.png")
+TEXTURE(NE_POLAROID_6, "NativeEnhancer/Frame/Polaroid6.png")
+SAMPLER(NE_POLAROID_A, NE_POLAROID_1)
+SAMPLER(NE_POLAROID_B, NE_POLAROID_2)
+SAMPLER(NE_POLAROID_C, NE_POLAROID_3)
+SAMPLER(NE_POLAROID_D, NE_POLAROID_4)
+SAMPLER(NE_POLAROID_E, NE_POLAROID_5)
+SAMPLER(NE_POLAROID_F, NE_POLAROID_6)
 
 // PRISM ///////////////////////////////////////////////////////////////////
 TEXTURE(NE_PRISM_1, "NativeEnhancer/Prism/prism1.jpg")
