@@ -5,7 +5,7 @@
 // /_/ |_/\__,_/\__/_/ |___/\___/_____/_/ /_/_/ /_/\__,_/_/ /_/\___/\___/_/
 ///////////////////////////////////////////////////////////////////////////
 // Film Emulation LUT
-// Version 2.7 Closed Public Release
+// Version 2.8 Closed Public Release
 // by d3fault
 ///////////////////////////////////////////////////////////////////////////
 // Miscellaneous / Passes
@@ -24,8 +24,11 @@
 #define Blend(base, blend, funcf)   float3(funcf(base.r, blend.r), funcf(base.g, blend.g), funcf(base.b, blend.b))
 #define BlendScreenf(base, blend)   (1.0 - ((1.0 - base) * (1.0 - blend)))
 #define BlendLightenf(base, blend)  max(base, blend)
+#define BlendModLightenf(base, blend)   (1.0 - ((1.0 - max(base, blend)) * (1.0 - blend)))
+
 #define BlendScreen(base, blend)    Blend(base, blend, BlendScreenf)
 #define BlendLighten(base, blend)   Blend(base, blend, BlendLightenf)
+#define BlendModLighten(base, blend)   Blend(base, blend, BlendModLightenf)
 #define lumaCoeff                   float3(0.212656, 0.715158, 0.072186)
 
 // FUNCTIONS //////////////////////////////////////////////////////////////

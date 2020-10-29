@@ -5,7 +5,7 @@
 // /_/ |_/\__,_/\__/_/ |___/\___/_____/_/ /_/_/ /_/\__,_/_/ /_/\___/\___/_/
 ///////////////////////////////////////////////////////////////////////////
 // Film Emulation LUT
-// Version 2.7 Closed Public Release
+// Version 2.8 Closed Public Release
 // by d3fault
 ///////////////////////////////////////////////////////////////////////////
 // An simple and basic film emulation using LUT with various overlay
@@ -98,19 +98,10 @@ void FilmEmulation(float4 vpos : SV_Position, float2 texcoord : TEXCOORD, out fl
 			lutcolor   = lerp(tex2D(NE_VIN_FILM, lutcoord.xy).rgb, tex2D(NE_VIN_FILM, float2(lutcoord.x + texelsize.y, lutcoord.y)).rgb, lerpfact);
 		break;
 	}
-	
+
 	color.rgb    = lerp(normalize(color.rgb), normalize(lutcolor.rgb), 1) * lerp(length(color.rgb), length(lutcolor.rgb), 1);
 	color.rgb    = FSATURATION(color.rgb, SATURATION);
 	color.rgb    = ((color.rgb - 0.5f) * max(CONTRAST, 0)) + 0.5f;
-	color.a      = 1.0;
-}
-
-void FilmEffects(float4 vpos : SV_Position, float2 texcoord : TEXCOORD, out float4 color : SV_Target0)
-{
-	color = tex2D(ReShade::BackBuffer, texcoord.xy);
-	if (USE_RADIAL_BLUR == true){
-		color = RadialBlur(texcoord.xy, RAD_BLUR_AMOUNT);
-	}
 	color.a      = 1.0;
 }
 
@@ -165,43 +156,10 @@ void FilmOverlay1(float4 vpos : SV_Position, float2 texcoord : TEXCOORD, out flo
 			case 1:
 				color = BlendLighten(color, OPACITY_CONTROL(leaks, LIGHT_LEAK_OPACITY));
 			break;
-		}
-	}
-
-	if (USE_PRISM == true)
-	{
-		switch(PRISM_VARIATION)
-		{
-			case 0:
-				pcoord.xy = NORM_COORD(texcoord.xy);
-			break;
-			case 1:
-				pcoord.xy = FLIP_COORD(texcoord.xy);
-			break;
-		}
-			pcoord.xy = rotateUV(pcoord.xy, PRISM_ROTATION);
-
-		switch(PRISM_TYPE)
-		{
-			case 0:
-				prism = tex2D(NE_PRISM_A, pcoord.xy);
-			break;
-			case 1:
-				prism = tex2D(NE_PRISM_B, pcoord.xy);
-			break;
 			case 2:
-				prism = tex2D(NE_PRISM_C, pcoord.xy);
-			break;
-			case 3:
-				prism = tex2D(NE_PRISM_D, pcoord.xy);
-			break;
-			case 4:
-				prism = tex2D(NE_PRISM_E, pcoord.xy);
+				color = BlendModLighten(color, OPACITY_CONTROL(leaks, LIGHT_LEAK_OPACITY));
 			break;
 		}
-
-		prism = FILL_CONTROL(prism, PRISM_INTENSITY);
-		color = BlendScreen(color, OPACITY_CONTROL(prism, PRISM_OPACITY));
 	}
 
 	color.a      = 1.0;
@@ -236,77 +194,73 @@ void FilmOverlay2(float4 vpos : SV_Position, float2 texcoord : TEXCOORD, out flo
 				dirt = tex2D(NE_DIRT_B, dcoord.xy);
 			break;
 		}
-		
+
 		dirt  = FILL_CONTROL(dirt, DIRT_INTENSITY);
 		color = ALPHA_BLEND(color, dirt);
 	}
 
-	switch (USE_FRAME)
+	if (USE_FRAME == 1)
 	{
-		case 0:
+		switch(POLAROID_TYPE)
 		{
-			switch(POLAROID_TYPE)
-			{
-				case 0:
-					frame = tex2D(NE_POLAROID_A, texcoord.xy);
-				break;
-				case 1:
-					frame = tex2D(NE_POLAROID_B, texcoord.xy);
-				break;
-				case 2:
-					frame = tex2D(NE_POLAROID_C, texcoord.xy);
-				break;
-				case 3:
-					frame = tex2D(NE_POLAROID_D, texcoord.xy);
-				break;
-				case 4:
-					frame = tex2D(NE_POLAROID_E, texcoord.xy);
-				break;
-				case 5:
-					frame = tex2D(NE_POLAROID_F, texcoord.xy);
-				break;
-			}
-		} break;
-		case 1:
-		{
-			switch(FRAME_TYPE)
-			{
-				case 0:
-					frame = tex2D(NE_FRAME_A, texcoord.xy);
-				break;
-				case 1:
-					frame = tex2D(NE_FRAME_B, texcoord.xy);
-				break;
-				case 2:
-					frame = tex2D(NE_FRAME_C, texcoord.xy);
-				break;
-				case 3:
-					frame = tex2D(NE_FRAME_D, texcoord.xy);
-				break;
-				case 4:
-					frame = tex2D(NE_FRAME_E, texcoord.xy);
-				break;
-				case 5:
-					frame = tex2D(NE_FRAME_F, texcoord.xy);
-				break;
-				case 6:
-					frame = tex2D(NE_FRAME_G, texcoord.xy);
-				break;
-				case 7:
-					frame = tex2D(NE_FRAME_H, texcoord.xy);
-				break;
-				case 8:
-					frame = tex2D(NE_FRAME_I, texcoord.xy);
-				break;
-				case 9:
-					frame = tex2D(NE_FRAME_J, texcoord.xy);
-				break;
-			}
-		} break;
+			case 0:
+				frame = tex2D(NE_POLAROID_A, texcoord.xy);
+			break;
+			case 1:
+				frame = tex2D(NE_POLAROID_B, texcoord.xy);
+			break;
+			case 2:
+				frame = tex2D(NE_POLAROID_C, texcoord.xy);
+			break;
+			case 3:
+				frame = tex2D(NE_POLAROID_D, texcoord.xy);
+			break;
+			case 4:
+				frame = tex2D(NE_POLAROID_E, texcoord.xy);
+			break;
+			case 5:
+				frame = tex2D(NE_POLAROID_F, texcoord.xy);
+			break;
+		}
 	}
-	
-	color = ALPHA_BLEND(color, frame);
+	else if (USE_FRAME == 2)
+	{
+		switch(FRAME_TYPE)
+		{
+			case 0:
+				frame = tex2D(NE_FRAME_A, texcoord.xy);
+			break;
+			case 1:
+				frame = tex2D(NE_FRAME_B, texcoord.xy);
+			break;
+			case 2:
+				frame = tex2D(NE_FRAME_C, texcoord.xy);
+			break;
+			case 3:
+				frame = tex2D(NE_FRAME_D, texcoord.xy);
+			break;
+			case 4:
+				frame = tex2D(NE_FRAME_E, texcoord.xy);
+			break;
+			case 5:
+				frame = tex2D(NE_FRAME_F, texcoord.xy);
+			break;
+			case 6:
+				frame = tex2D(NE_FRAME_G, texcoord.xy);
+			break;
+			case 7:
+				frame = tex2D(NE_FRAME_H, texcoord.xy);
+			break;
+			case 8:
+				frame = tex2D(NE_FRAME_I, texcoord.xy);
+			break;
+			case 9:
+				frame = tex2D(NE_FRAME_J, texcoord.xy);
+			break;
+		}
+	}
 
+	color = ALPHA_BLEND(color, frame);
 	color.a = 1.0;
 }
 
@@ -316,7 +270,6 @@ void FilmOverlay2(float4 vpos : SV_Position, float2 texcoord : TEXCOORD, out flo
 TECHNIQUE(NativeEnhancerFE,
 	PASS(1, PostProcessVS, FilmAdjustment)
 	PASS(2, PostProcessVS, FilmEmulation)
-	PASS(3, PostProcessVS, FilmEffects)
 	PASS(4, PostProcessVS, FilmOverlay1)
-	PASS(5, PostProcessVS, FilmOverlay2)
+	PASS(4, PostProcessVS, FilmOverlay2)
 	)

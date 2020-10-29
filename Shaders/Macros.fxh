@@ -7,6 +7,7 @@
 // Changelogs :                                           //
 //   Added Sampler texture boundary resolver option       //
 //   Added float2 parameters option                       //
+//   Added Technique name with tooltip option             //
 ////////////////////////////////////////////////////////////
 // Macros Guide:                                          //
 ////////////////////////////////////////////////////////////
@@ -607,6 +608,12 @@
 // TECHNIQUE MACROS //////////////////////////////
     #define TECHNIQUE(tname, pass) \
         technique tname \
+        { \
+            pass \
+        }
+
+    #define TECHNIQUE_TP(tname, pass, tooltip) \
+        technique tname < ui_tooltip = "tooltip" > \
         { \
             pass \
         }

@@ -5,7 +5,7 @@
 // /_/ |_/\__,_/\__/_/ |___/\___/_____/_/ /_/_/ /_/\__,_/_/ /_/\___/\___/_/
 ///////////////////////////////////////////////////////////////////////////
 // Film Emulation LUT
-// Version 2.7 Closed Public Release
+// Version 2.8 Closed Public Release
 // by d3fault
 ///////////////////////////////////////////////////////////////////////////
 // User Interface Parameter
@@ -44,15 +44,11 @@ CAT_COMBO(VIN_LUT_SELECTOR,   "LUT", "Vintage Film", "Choose the Vintage Film to
   CAT_COLOR(WHITE_POINT,         "Color Adjustment", "White Point", "The new white point. Everything brighter than this becomes completely white.", 255/255.0f, 255/255.0f, 255/255.0f)
 #endif
 
-// RADIAL BLUR ////////////////////////////////////////////////////////////
-CAT_BOOL(USE_RADIAL_BLUR,        "Radial Blur", "Enable Radial blur", "Radial blur is a particular kind of blurring effect that originates at\na single point within an image and blurs outwards\n(or inwards) from (or to) the point.", false)
-CAT_FLOAT_D(RAD_BLUR_AMOUNT,     "Radial Blur", "Radial Blur Amount", "Adjust the Blur Intensity", 0.0f, 1.00f, 0.00f)
-
 // LIGHT LEAKS ////////////////////////////////////////////////////////////
 CAT_BOOL(USE_LIGHT_LEAK,         "Light Leak", "Enable Light Leaks",           "A light leak is a hole or gap in the body of a camera,\nwhere light is able to 'leak' into the normally light-tight chamber,\nexposing the film or sensor with extra light. ", false)
 CAT_COMBO(LIGHT_LEAK_TYPE,       "Light Leak", "Light Leak Texture Selection", "Choose the Light Leak texture to apply", 0, 3, 0, " Anoa \0 Bramuna \0 Cressan \0 Drytia \0")
 CAT_COMBO(LIGHT_LEAK_VARIATION,  "Light Leak", "Light Leak Variation",         "Choose the variation for the Light Leak to apply.", 0, 1, 0, " Normal Axis \0 Flipped Axis \0")
-CAT_COMBO(LIGHT_LEAK_BLEND_MODE, "Light Leak", "Light Leak Blend Mode",        "Choose the blend mode for the Light Leak to apply.", 0, 1, 0, " Screen \0 Lighten \0")
+CAT_COMBO(LIGHT_LEAK_BLEND_MODE, "Light Leak", "Light Leak Blend Mode",        "Choose the blend mode for the Light Leak to apply.", 0, 2, 0, " Screen \0 Lighten \0 Modded Lighten\0")
 CAT_INT_D(LIGHT_LEAK_ROTATION,   "Light Leak", "Light Leak Rotation",          "Adjust the Rotation", 0, 360, 0)
 CAT_INT_D(LIGHT_LEAK_HUE,        "Light Leak", "Light Leak Color",             "Adjust the Color", -100, 100, 0)
 CAT_FLOAT_D(LIGHT_LEAK_SATURATE, "Light Leak", "Light Leak Saturation",        "Adjust the saturation", 0.0f, 2.0f, 1.0f)
@@ -60,7 +56,7 @@ CAT_FLOAT_D(LIGHT_LEAK_OPACITY,  "Light Leak", "Light Leak Opacity",           "
 CAT_FLOAT_D(LIGHT_LEAK_INTENSITY,"Light Leak", "Light Leak Intensity",         "Adjust the Intensity", 0.0f, 1.00f, 1.00f)
 
 // FRAME //////////////////////////////////////////////////////////////////
-CAT_COMBO(USE_FRAME ,            "Film Frame", "Enable Film Frame",            "Simulate a film frame by overlaying a texture.", 0, 1, 0, " Polaroid \0 Film \0")
+CAT_COMBO(USE_FRAME ,            "Film Frame", "Enable Film Frame",            "Simulate a film frame by overlaying a texture.", 0, 2, 0, " Disabled \0 Polaroid \0 Film \0")
 CAT_COMBO(FRAME_TYPE,            "Film Frame", "Film Frame Texture Selection", "Choose the Film Frame Texture to apply", 0, 9, 0, " Fuji RVP 100 \0 Kodak Ektachrome \0 Kodak 160NC \0 Hasselblad \0 Kodak 400 VC \0 Fuji RVP \0 Kodak Portra 400 \0 Fuji RVP (potrait) \0 Kodak Portra 400BW \0 Fuji RVP (alt) \0")
 CAT_COMBO(POLAROID_TYPE,         "Film Frame", "Polaroid Frame Texture Selection", "Choose the Polaroid Frame Texture to apply", 0, 5, 0, " Polaroid A \0 Polaroid B \0 Polaroid C \0 Polaroid D \0 Polaroid E \0 Polaroid F \0")
 
@@ -70,11 +66,3 @@ CAT_COMBO(DIRT_TYPE,             "Film Dirt", "Film Dirt Texture Selection", "Ch
 CAT_COMBO(DIRT_VARIATION,        "Film Dirt", "Film Dirt Variation",         "Choose the variation for the Film Dirt to apply.", 0, 1, 0, " Normal Axis \0 Flipped Axis \0")
 CAT_INT_D(DIRT_ROTATION,         "Film Dirt", "Film Dirt Rotation",          "Adjust the Rotation", 0, 360, 0)
 CAT_FLOAT_D(DIRT_INTENSITY,      "Film Dirt", "Film Dirt Intensity",         "Adjust the Intensity", 0.0f, 1.00f, 1.00f)
-
-// PRISM //////////////////////////////////////////////////////////////////
-CAT_BOOL(USE_PRISM,              "Prism", "Enable Prism",            "Simulate light refraction on lens", false)
-CAT_COMBO(PRISM_TYPE,            "Prism", "Prism Texture Selection", "Choose the Prism Texture to apply", 0, 3, 0, " Aruna \0 Bexa \0 Croxle \0 Dramu \0")
-CAT_COMBO(PRISM_VARIATION,       "Prism", "Prism Variation",         "Choose the variation for the Prism to apply.", 0, 1, 0, " Normal Axis \0 Flipped Axis \0")
-CAT_INT_D(PRISM_ROTATION,        "Prism", "Prism Rotation",          "Adjust the Rotation", 0, 360, 0)
-CAT_FLOAT_D(PRISM_OPACITY,       "Prism", "Prism Opacity",           "Adjust the Opacity", 0.0f, 1.00f, 1.00f)
-CAT_FLOAT_D(PRISM_INTENSITY,     "Prism", "Prism Intensity",         "Adjust the Intensity", 0.0f, 1.00f, 1.00f)

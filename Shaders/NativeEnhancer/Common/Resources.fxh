@@ -5,7 +5,7 @@
 // /_/ |_/\__,_/\__/_/ |___/\___/_____/_/ /_/_/ /_/\__,_/_/ /_/\___/\___/_/
 ///////////////////////////////////////////////////////////////////////////
 // Film Emulation LUT
-// Version 2.7 Closed Public Release
+// Version 2.8 Closed Public Release
 // by d3fault
 ///////////////////////////////////////////////////////////////////////////
 // Textures and other resources
@@ -76,15 +76,3 @@ SAMPLER(NE_POLAROID_C, NE_POLAROID_3)
 SAMPLER(NE_POLAROID_D, NE_POLAROID_4)
 SAMPLER(NE_POLAROID_E, NE_POLAROID_5)
 SAMPLER(NE_POLAROID_F, NE_POLAROID_6)
-
-// PRISM ///////////////////////////////////////////////////////////////////
-TEXTURE(NE_PRISM_1, "NativeEnhancer/Prism/prism1.jpg")
-TEXTURE(NE_PRISM_2, "NativeEnhancer/Prism/prism2.jpg")
-TEXTURE(NE_PRISM_3, "NativeEnhancer/Prism/prism3.jpg")
-TEXTURE(NE_PRISM_4, "NativeEnhancer/Prism/prism4.jpg")
-TEXTURE(NE_PRISM_5, "NativeEnhancer/Prism/prism5.jpg")
-SAMPLER(NE_PRISM_A, NE_PRISM_1)
-SAMPLER(NE_PRISM_B, NE_PRISM_2)
-SAMPLER(NE_PRISM_C, NE_PRISM_3)
-SAMPLER(NE_PRISM_D, NE_PRISM_4)
-SAMPLER(NE_PRISM_E, NE_PRISM_5)
