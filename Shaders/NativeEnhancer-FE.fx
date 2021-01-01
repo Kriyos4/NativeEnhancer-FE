@@ -1,37 +1,37 @@
 /*
-		NATIVENHANCER Film Emulation for ReShade
-		Version One
-		by dddfault
-		Copyright (c) 2020 dddfault
+	NATIVENHANCER Film Emulation for ReShade
+	Version One
+	by dddfault
+	Copyright (c) 2020 dddfault
 
-		A simple and basic film emulation using color lookup table
-		combined with various overlay textures to mimic analog film looks.
+	A simple and basic film emulation using color lookup table
+	combined with various overlay textures to mimic analog film looks.
 
-		Additional credits
-		- Based on Otis_Inf's MultiLUT
-		  with further modification by prod80
-		- Additional shader functions by prod80
-		- Fisheye shader by Ice La Glace (ported from a site)
+	Additional credits
+	- Based on Otis_Inf's MultiLUT
+	  with further modification by prod80
+	- Additional shader functions by prod80
+	- Fisheye shader by Ice La Glace (ported from a site)
 
-		MIT License
+	MIT License
 
-		Permission is hereby granted, free of charge, to any person obtaining a copy
-		of this software and associated documentation files (the "Software"), to deal
-		in the Software without restriction, including without limitation the rights
-		to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-		copies of the Software, and to permit persons to whom the Software is
-		furnished to do so, subject to the following conditions:
+	Permission is hereby granted, free of charge, to any person obtaining a copy
+	of this software and associated documentation files (the "Software"), to deal
+	in the Software without restriction, including without limitation the rights
+	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+	copies of the Software, and to permit persons to whom the Software is
+	furnished to do so, subject to the following conditions:
 
-		The above copyright notice and this permission notice shall be included in all
-		copies or substantial portions of the Software.
+	The above copyright notice and this permission notice shall be included in all
+	copies or substantial portions of the Software.
 
-		THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-		IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-		FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-		AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-		LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-		OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-		SOFTWARE.
+	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+	SOFTWARE.
 */
 
 // INITIAL SETUP //////////////////////////////////////////////////////////
